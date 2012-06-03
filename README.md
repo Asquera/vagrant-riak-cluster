@@ -3,8 +3,8 @@ vagrant-riak-cluster
 
 Usage:
   
-  $ gem install vagrant
-  $ vagrant up
+    $ gem install vagrant
+    $ vagrant up
   
 This fires up 4 vms with riak installed and configured.
 
