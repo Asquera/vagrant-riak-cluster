@@ -1,0 +1,2 @@
+vagrant-riak-cluster
+====================
