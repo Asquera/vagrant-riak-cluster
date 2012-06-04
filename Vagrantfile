@@ -18,9 +18,6 @@ Vagrant::Config.run do |config|
       riak.vm.boot_mode = :gui
       riak.vm.network :hostonly, opts[:network]
 
-      riak.dns.tld = "dev"
-      riak.dns.patterns = [/#{name}.dev$/]
-
       riak.vm.provision :puppet, :facter => { "riak_node_name" => "riak@#{opts[:network]}" } do |puppet|
         puppet.manifests_path = "manifests"
         puppet.manifest_file = "riakbox.pp"
