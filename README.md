@@ -1,7 +1,8 @@
-vagrant-riak-cluster
-====================
+# vagrant-riak-cluster
 
-Usage:
+This package provides a small cluster of riak nodes running in one virtual machine each. This allows to test out riak in its natural environment with failing and restarting machines and everything :).
+
+## Usage
   
     $ git clone https://github.com/asquera/vagrant-riak-cluster.git
     $ gem install vagrant
@@ -27,3 +28,11 @@ All nodes are bound to 0.0.0.0, using the following port mapping:
 * `https`: `8068`
 * `protocol buffers`: `8087`
 * `handoff`: `8099`
+
+## Words of warning
+
+All scripts and configurations are intended for testing purposes. For example, the setup uses the demo certificates provided by basho. Don't use this setup in production without checking all settings.
+
+## Contributions
+
+Very welcome! If you know a better way to solve things, please send a pull request!
