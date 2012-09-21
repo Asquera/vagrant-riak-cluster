@@ -13,15 +13,15 @@ class riak {
     }
   }
 
-  download{ "riak/CURRENT/riak_1.1.2-1_amd64.deb":
-    creates => "riak_1.1.2-1_amd64.deb",
-    site => "http://downloads.basho.com",
+  download{ "downloads.basho.com/riak/1.1/1.1.4/riak_1.1.4-1_amd64.deb":
+    creates => "riak_1.1.4-1_amd64.deb",
+    site => "http://s3.amazonaws.com",
     cwd => "/tmp",
     user => "vagrant"
   }
 
   exec { "install": 
-    command => "/usr/bin/dpkg --install /tmp/riak_1.1.2-1_amd64.deb"
+    command => "/usr/bin/dpkg --install /tmp/riak_1.1.4-1_amd64.deb"
   }
 
   file {"/etc/riak/vm.args":
@@ -54,5 +54,5 @@ class riak {
     ensure => present
   }
   
-  Download["riak/CURRENT/riak_1.1.2-1_amd64.deb"] -> Package["libssl0.9.8"] -> Exec["install"] -> Service["riak"]
+  Download["downloads.basho.com/riak/1.1/1.1.4/riak_1.1.4-1_amd64.deb"] -> Package["libssl0.9.8"] -> Exec["install"] -> Service["riak"]
 }
